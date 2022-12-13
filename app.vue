@@ -112,8 +112,29 @@ const social = [
           <img src="~/assets/img/banner1.jpg" alt="banner" class="w-full" />
         </a>
       </section>
+      <!-- 标签 -->
       <section class="border-b py-12">
         <tag-list />
+      </section>
+      <section class="border-b py-12">
+        <h3 class="mb-7 text-lg font-semibold">订阅我的博客动态</h3>
+        <p class="mb-7 text-base leading-8" style="color: #5f6266">
+          订阅我们的通讯，并获得独家帖子和内容更新。我们不会发送垃圾邮件，您的电子邮件也不会与第三方共享。
+        </p>
+        <div class="relative border py-4 pr-16 pl-6">
+          <input
+            type="text"
+            class="relative w-full outline-0"
+            placeholder="请输入邮箱"
+          />
+          <button class="absolute inset-y-1 right-1 w-16 hover:bg-gray-100">
+            <Icon
+              name="simple-icons:telegram"
+              size="20"
+              style="color: #d02f0f"
+            />
+          </button>
+        </div>
       </section>
     </aside>
     <!-- 内容 -->
