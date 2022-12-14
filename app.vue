@@ -30,6 +30,24 @@ const social = [
     size: "20px",
   },
 ];
+const footerLink = [
+  {
+    label: "Github",
+    link: "/",
+  },
+  {
+    label: "Gitee",
+    link: "/",
+  },
+  {
+    label: "掘金",
+    link: "/",
+  },
+  {
+    label: "博客园",
+    link: "/",
+  },
+];
 </script>
 
 <template>
@@ -61,7 +79,7 @@ const social = [
       </button>
     </div>
   </header>
-  <div
+  <main
     class="mx-auto flex w-4/5 max-w-screen-xl flex-row justify-between pt-10 pb-32"
   >
     <!-- 侧边栏 -->
@@ -116,6 +134,7 @@ const social = [
       <section class="border-b py-12">
         <tag-list />
       </section>
+      <!-- 订阅 -->
       <section class="border-b py-12">
         <h3 class="mb-7 text-lg font-semibold">订阅我的博客动态</h3>
         <p class="mb-7 text-base leading-8" style="color: #5f6266">
@@ -136,12 +155,45 @@ const social = [
           </button>
         </div>
       </section>
+      <!-- copyright -->
+      <section class="py-12">
+        <p class="mb-3 text-sm font-semibold" style="color: #1a1b1c">
+          Copyright © ElvinSun 2022
+        </p>
+        <p class="text-xs" style="color: #686b6f">
+          All rights reserved • Published with ElvinSun
+        </p>
+      </section>
     </aside>
     <!-- 内容 -->
     <section class="basis-8/12">
       <NuxtPage />
     </section>
-  </div>
+  </main>
+  <footer
+    class="flex justify-between px-16 py-12"
+    style="background-color: #f4f6f8"
+  >
+    <!-- 导航链接 -->
+    <nav>
+      <ul class="flex">
+        <li v-for="item in footerLink" :key="item.label" class="mr-4">
+          <a :href="item.link">{{ item.label }}</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- 社交链接 -->
+    <section class="flex">
+      <a
+        v-for="item in social"
+        :key="item.icon"
+        :href="item.link"
+        class="social-link mr-8"
+      >
+        <Icon :name="item.icon" :size="item.size" :style="{ color: 'grey' }" />
+      </a>
+    </section>
+  </footer>
 </template>
 
 <style>
